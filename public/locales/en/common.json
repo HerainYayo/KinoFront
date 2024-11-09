@@ -1,0 +1,56 @@
+{
+	"Everything is ready!": "Everything is ready! \uD83C\uDF89",
+	"Demo Pages": "Demo Pages",
+	"change-locale": "Change Lng",
+	"Welcome": "Welcome Streamer",
+	"PleaseLoginToContinue": "Please login to continue",
+	"BasicSetting": "Basic Setting",
+	"JoinMessage": "Join Message",
+	"JoinMessageSub": "Message for joining the match",
+	"LeaveMessage": "Leave Message",
+	"LeaveMessageSub": "Message for leaving the match",
+	"WelcomeMessage": "Welcome Message",
+	"WelcomeMessageSub": "Message for welcoming the viewers to the match",
+	"GoodbyeMessage": "Goodbye Message",
+	"GoodbyeMessageSub": "Message for saying goodbye to the viewers",
+
+	"InGameMembers": "In-Game Members",
+	"WaitingMembers": "Waiting Members",
+
+	"YoutubeName": "Youtube Name",
+	"InGameName": "In-Game Name",
+	"PlayCount": "Play Count",
+	"XP": "XP",
+	"Action": "Action",
+
+	"GroupByXP": "Group by XP",
+	"StartGame": "Start Game",
+
+	"ViewStatisticalAnalysis": "View Statistical Analysis",
+	"ClearHistoryData": "Clear History Data",
+
+	"Save": "Save",
+	"Description": "Description",
+
+	"Previous": "Previous",
+	"Next": "Next",
+
+	"TeamFormation": "Team Formation",
+	"Team1": "Team 1",
+	"Team2": "Team 2",
+	"OK": "OK",
+
+	"YouHaveChangedTheLanguage": "You have changed the language",
+
+	"JoinLiveChat": "Join Live Chat",
+
+	"PublishedDate": "Published Date",
+
+	"DebugInfo": "Debug Info",
+
+	"LoginWithGoogle": "Continue with Google",
+	"Login": "Login",
+	"LoginToContinue": "Login to continue",
+
+	"KinoStreamManager": "Kino Stream Manager"
+}

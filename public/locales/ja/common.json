@@ -1,0 +1,53 @@
+{
+    "Welcome": "ようこそ",
+    "PleaseLoginToContinue": "続行するにはログインしてください",
+    "BasicSetting": "基本設定",
+    "JoinMessage": "参加メッセージ",
+    "JoinMessageSub": "試合に参加するためのメッセージ",
+    "LeaveMessage": "退出メッセージ",
+    "LeaveMessageSub": "試合を去るためのメッセージ",
+    "WelcomeMessage": "ようこそメッセージ",
+    "WelcomeMessageSub": "視聴者を試合に歓迎するためのメッセージ",
+    "GoodbyeMessage": "さようならメッセージ",
+    "GoodbyeMessageSub": "視聴者にさようならと言うためのメッセージ",
+
+    "InGameMembers": "ゲーム内メンバー",
+    "WaitingMembers": "待機メンバー",
+
+    "YoutubeName": "Youtube 名",
+    "InGameName": "ゲーム内名",
+    "PlayCount": "プレイ回数",
+    "XP": "XP",
+    "Action": "アクション",
+
+    "GroupByXP": "XP でグループ化",
+    "StartGame": "ゲームを開始",
+
+    "ViewStatisticalAnalysis": "統計分析を表示",
+    "ClearHistoryData": "履歴データをクリア",
+
+    "Save": "保存",
+    "Description": "説明",
+
+    "Previous": "前へ",
+    "Next": "次へ",
+
+    "TeamFormation": "チーム編成",
+    "Team1": "チーム 1",
+    "Team2": "チーム 2",
+    "OK": "OK",
+
+    "YouHaveChangedTheLanguage": "言語を変更しました",
+
+    "JoinLiveChat": "ライブチャットに参加",
+    "PublishedDate": "公開日",
+
+    "DebugInfo": "デバッグ情報",
+
+
+    "LoginWithGoogle": "Google で続行",
+    "Login": "ログイン",
+    "LoginToContinue": "続行するにはログインしてください",
+
+    "KinoStreamManager": "Kino Stream Manager"
+}
