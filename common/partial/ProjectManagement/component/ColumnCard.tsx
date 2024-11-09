@@ -272,6 +272,7 @@ const ColumnCard: FC<IColumnCard> = ({
 									</CardLabel>
 								</CardHeader>
 								<CardBody>
+									<></>
 									{/*<Chat>*/}
 									{/*	{CHATS.CHLOE_VS_JOHN.map((msg) => (*/}
 									{/*		<ChatGroup*/}
