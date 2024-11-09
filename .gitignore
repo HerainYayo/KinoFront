@@ -40,3 +40,8 @@ next-env.d.ts
 # WebStorm
 .idea
 package-lock.json
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
