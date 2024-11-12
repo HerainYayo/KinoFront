@@ -131,7 +131,6 @@ const Index = () => {
 			return;
 		}
 
-
 		//get broadcast info and set it as current broadcast in backend
 		axiosClient
 			.post('/broadcasts', {
@@ -166,6 +165,7 @@ const Index = () => {
 			.catch((err) => {
 				console.log('err:', err);
 			});
+
 	}, [router.isReady]);
 
 	function clearHistoryData() {
@@ -209,6 +209,10 @@ const Index = () => {
 	const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
 	useEffect(() => {
 		console.log('broadCastInfo.liveChatId:', broadCastInfo.liveChatId);
+
+		if(!broadCastInit){
+			return;
+		}
 
 		if (broadCastInfo.liveChatId && broadCastInfo.liveChatId !== '') {
 			if (!intervalIdRef.current) {
