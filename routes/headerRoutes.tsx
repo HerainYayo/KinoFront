@@ -11,6 +11,7 @@ const headers = [
 	{ path: demoPagesMenu.signUp.path, element: null },
 	{ path: demoPagesMenu.page404.path, element: null },
 	{ path: pageLayoutTypesPagesMenu.pageLayout.subMenu.privacy.path, element: null },
+	{ path: pageLayoutTypesPagesMenu.pageLayout.subMenu.termOfService.path, element: null },
 	{ path: dashboardPagesMenu.dashboard.path, element: <DashboardHeader /> },
 	{
 		path: `/*`,

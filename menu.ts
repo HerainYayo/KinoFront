@@ -93,6 +93,11 @@ export const pageLayoutTypesPagesMenu = {
 				id: 'privacy',
 				text: 'Privacy',
 				path: 'page-layouts/privacy',
+			},
+			termOfService: {
+				id: 'termOfService',
+				text: 'termOfService',
+				path: 'page-layouts/term-of-service'
 			}
 		},
 	},

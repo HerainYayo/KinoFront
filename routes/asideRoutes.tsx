@@ -9,6 +9,11 @@ const asides = [
 	{ path: demoPagesMenu.signUp.path, element: null, exact: true },
 	{ path: pageLayoutTypesPagesMenu.blank.path, element: null, exact: true },
 	{ path: pageLayoutTypesPagesMenu.pageLayout.subMenu.privacy.path, element: null, exact: true },
+	{
+		path: pageLayoutTypesPagesMenu.pageLayout.subMenu.termOfService.path,
+		element: null,
+		exact: true,
+	},
 	{ path: '/*', element: <DefaultAside />, exact: true },
 ];
 
