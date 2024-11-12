@@ -52,5 +52,8 @@
 	"Login": "Login",
 	"LoginToContinue": "Login to continue",
 
-	"KinoStreamManager": "Kino Stream Manager"
+	"KinoStreamManager": "Kino Stream Manager",
+
+	    "TermOfService": "Term Of Service",
+    "PrivacyPolicy": "Privacy Policy"
 }

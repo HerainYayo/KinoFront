@@ -49,5 +49,8 @@
     "Login": "ログイン",
     "LoginToContinue": "続行するにはログインしてください",
 
-    "KinoStreamManager": "Kino Stream Manager"
+    "KinoStreamManager": "Kino Stream Manager",
+
+    "TermOfService": "利用規約",
+    "PrivacyPolicy": "プライバシーポリシー"
 }
