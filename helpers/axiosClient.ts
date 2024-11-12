@@ -15,7 +15,7 @@ class AxiosClient {
 		this.axiosInstanceJson = axios.create({
 			headers: {
 				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': '*',
+				// 'Access-Control-Allow-Origin': 'http://localhost:3000',
 			},
 			withCredentials: true,
 		});
@@ -23,7 +23,7 @@ class AxiosClient {
 		this.axiosInstanceForm = axios.create({
 			headers: {
 				'Content-Type': 'multipart/form-data',
-				'Access-Control-Allow-Origin': '*',
+				// 'Access-Control-Allow-Origin': 'http://localhost:3000',
 			},
 			withCredentials: true,
 		});

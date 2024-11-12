@@ -29,11 +29,7 @@ const Index: NextPage = () => {
 	useEffect(() => {
 		async function fetchData() {
 			try {
-				const axiosResponse = await axiosClient.get('/listLiveBroadcasts');
-
-				console.log('axiosResponse', axiosResponse);
-
-				// console.log(axiosResponse.data.items);
+				const axiosResponse = await axiosClient.get('/api/listLiveBroadcasts');
 
 				let data = axiosResponse.data as any;
 

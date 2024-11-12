@@ -67,35 +67,44 @@ const Index = () => {
 	//updateRoomMemberLists
 	//listLiveChatMessages
 	function fetchChatMessages() {
-		console.log('fetchChatMessages');
 		axiosClient
 			.post('/processMessages', {
 				liveChatId: broadCastInfo?.liveChatId,
 			})
 			.then((res) => {
 				let data = res.data as any;
-				if (data.rmvWaitingList) {
-					//rmvWaitingList contain channelId of players that are removed from waiting list or from player list
-					let rmvWaitingList = data.rmvWaitingList as string[];
-					let newWaitingList = waitingPlayerList.filter((player) => {
-						return !rmvWaitingList.includes(player.channelId);
+				console.log('data:', data);
+
+				let dataNewWaitingList = data.newWaitingList as IPlayer[];
+				let dataRmvWaitingList = data.rmvWaitingList as string[];
+
+				if (dataNewWaitingList || dataRmvWaitingList) {
+					setWaitingPlayerList((prevList) => {
+						let updatedList = [...prevList];
+
+						if (dataNewWaitingList) {
+							updatedList = [...updatedList, ...dataNewWaitingList];
+						}
+
+						if (dataRmvWaitingList) {
+							updatedList = updatedList.filter(
+								(player) => !dataRmvWaitingList.includes(player.channelId),
+							);
+						}
+
+						return updatedList;
 					});
 
-					setWaitingPlayerList(newWaitingList);
+					setPlayerList((prevList) => {
+						let updatedList = [...prevList];
 
-					let newPlayerList = playerList.filter((player) => {
-						return !rmvWaitingList.includes(player.channelId);
-					});
+						if (dataRmvWaitingList) {
+							updatedList = updatedList.filter(
+								(player) => !dataRmvWaitingList.includes(player.channelId),
+							);
+						}
 
-					setPlayerList(newPlayerList);
-				}
-
-				if (data.newWaitingList as IPlayer[]) {
-					//append to waiting list
-					setWaitingPlayerList([...waitingPlayerList, ...data.newWaitingList]);
-					//show notification to alert that player is joining the room
-					data.newWaitingList.forEach((player: IPlayer) => {
-						showNotification('success', `${player.displayName} joined the room`);
+						return updatedList;
 					});
 				}
 			})
@@ -122,12 +131,11 @@ const Index = () => {
 			return;
 		}
 
+
 		//get broadcast info and set it as current broadcast in backend
 		axiosClient
-			.get('/broadcasts', {
-				params: {
-					broadCastId: broadCastId,
-				},
+			.post('/broadcasts', {
+				id: broadCastId,
 			})
 			.then((res) => {
 				console.log('room res:', res);
@@ -152,92 +160,6 @@ const Index = () => {
 
 				setPlayerList(playerList);
 				setWaitingPlayerList(waitingList);
-
-				// for testing
-				// setWaitingPlayerList([
-				// 	...waitingList,
-				// 	{
-				// 		channelId: 'UCgJvD8GZ7tQf5L6dUJz6UEg1',
-				// 		displayName: 'きのこ',
-				// 		additionalInfo: {
-				// 			inGameName: 'きのこ',
-				// 			playCount: 100,
-				// 			xp: 2300,
-				// 		},
-				// 	},
-				// 	{
-				// 		channelId: 'UCgJvD8GZ7tQf5L6dUJz6UEg2',
-				// 		displayName: 'きのこ',
-				// 		additionalInfo: {
-				// 			inGameName: 'きのこ',
-				// 			playCount: 100,
-				// 			xp: 1700,
-				// 		},
-				// 	},
-				// 	{
-				// 		channelId: 'UCgJvD8GZ7tQf5L6dUJz6UEg3',
-				// 		displayName: 'きのこ',
-				// 		additionalInfo: {
-				// 			inGameName: 'きのこ',
-				// 			playCount: 100,
-				// 			xp: 4000,
-				// 		},
-				// 	},
-				// 	{
-				// 		channelId: 'UCgJvD8GZ7tQf5L6dUJz6UEg4',
-				// 		displayName: 'きのこ',
-				// 		additionalInfo: {
-				// 			inGameName: 'きのこ',
-				// 			playCount: 100,
-				// 			xp: 1200,
-				// 		},
-				// 	},
-				// 	{
-				// 		channelId: 'UCgJvD8GZ7tQf5L6dUJz6UEg5',
-				// 		displayName: 'きのこ',
-				// 		additionalInfo: {
-				// 			inGameName: 'きのこ',
-				// 			playCount: 100,
-				// 			xp: 1500,
-				// 		},
-				// 	},
-				// 	{
-				// 		channelId: 'UCgJvD8GZ7tQf5L6dUJz6UEg6',
-				// 		displayName: 'きのこ',
-				// 		additionalInfo: {
-				// 			inGameName: 'きのこ',
-				// 			playCount: 100,
-				// 			xp: 1600,
-				// 		},
-				// 	},
-				// 	{
-				// 		channelId: 'UCgJvD8GZ7tQf5L6dUJz6UEg7',
-				// 		displayName: 'きのこ',
-				// 		additionalInfo: {
-				// 			inGameName: 'きのこ',
-				// 			playCount: 100,
-				// 			xp: 2800,
-				// 		},
-				// 	},
-				// 	{
-				// 		channelId: 'UCgJvD8GZ7tQf5L6dUJz6UEg8',
-				// 		displayName: 'きのこ',
-				// 		additionalInfo: {
-				// 			inGameName: 'きのこ',
-				// 			playCount: 100,
-				// 			xp: 1400,
-				// 		},
-				// 	},
-				// 	{
-				// 		channelId: 'UCgJvD8GZ7tQf5L6dUJz6UEg9',
-				// 		displayName: 'きのこ',
-				// 		additionalInfo: {
-				// 			inGameName: 'きのこ',
-				// 			playCount: 100,
-				// 			xp: 2200,
-				// 		},
-				// 	},
-				// ]);
 
 				setBroadCastInit(true);
 			})
@@ -441,7 +363,13 @@ const Index = () => {
 		let start = (currentPage - 1) * pageLimit;
 		let end = start + pageLimit;
 		setRenderWaitingPlayerList(waitingPlayerList.slice(start, end));
+
+		console.log('render waiting list:', waitingPlayerList);
 	}, [waitingPlayerList, currentPage]);
+
+	useEffect(() => {
+		console.log('waitingPlayerList changed!:', waitingPlayerList);
+	}, [waitingPlayerList]);
 
 	function renderWaitingPlayerTable() {
 		return (

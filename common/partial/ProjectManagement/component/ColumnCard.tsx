@@ -212,7 +212,7 @@ const ColumnCard: FC<IColumnCard> = ({
 										</CardLabel>
 										<CardActions>
 											<Button color='danger' isOutline>
-												New
+												
 											</Button>
 										</CardActions>
 									</CardHeader>

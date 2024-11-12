@@ -26,11 +26,13 @@ const Login: NextPage<ILoginProps> = () => {
 
 	const { darkModeStatus } = useDarkMode();
 
+	console.log('url path',process.env.NEXT_PUBLIC_GATEWAY_URL)
+
 	const handleOnClick = useCallback(async () => {
 		console.log(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID);
 		// router.push('/');
 
-		window.location.href = 'http://localhost:8080/loginToGoogle';
+		window.location.href = process.env.NEXT_PUBLIC_GATEWAY_URL + '/loginToGoogle';
 
 		// oauthSignIn();
 	}, [router]);
@@ -56,7 +58,6 @@ const Login: NextPage<ILoginProps> = () => {
 					<div className='col-xl-4 col-lg-6 col-md-8 shadow-3d-container'>
 						<Card className='shadow-3d-dark' data-tour='login-page'>
 							<CardBody>
-
 								<div className='text-center my-5'>
 									<div>
 										<img
@@ -65,7 +66,9 @@ const Login: NextPage<ILoginProps> = () => {
 											width={100}
 										/>
 									</div>
-									<div className='text-center h4 text-muted mb-5'>{t('KinoStreamManager')}</div>
+									<div className='text-center h4 text-muted mb-5'>
+										{t('KinoStreamManager')}
+									</div>
 								</div>
 
 								<LoginHeader />

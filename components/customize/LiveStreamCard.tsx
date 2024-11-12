@@ -28,28 +28,6 @@ const LiveStreamCard: FC<ILiveStreamCardProps> = ({ LiveStreamData }) => {
 
 	const { t } = useTranslation();
 
-	function getLiveChatList() {
-		console.log('Live Chat ID:', LiveStreamData.liveChatId);
-
-		axiosClient
-			.post('/listLiveChatMessages', {
-				liveChatId: LiveStreamData.liveChatId,
-			})
-			.then((res) => {
-				console.log('res:', res);
-			});
-
-		axiosClient
-			.post('/insertLiveChatMessage', {
-				liveChatId: LiveStreamData.liveChatId,
-				message: 'Hello World',
-			})
-			.then((res) => {
-				console.log('res:', res);
-				showNotification('success', 'Message Sent');
-			});
-	}
-
 	function joinBroadcast() {
 		//pass params to /page-layouts/broadcast/index.tsx
 
