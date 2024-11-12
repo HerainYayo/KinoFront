@@ -216,17 +216,17 @@ const Index = () => {
 
 		if (broadCastInfo.liveChatId && broadCastInfo.liveChatId !== '') {
 			if (!intervalIdRef.current) {
-				axiosClient
-					.post('/insertLiveChatMessage', {
-						liveChatId: broadCastInfo?.liveChatId,
-						message: '[きのボット] 参加リクエストの受付を開始しました！',
-					})
-					.then((res) => {
-						console.log('res:', res);
-					})
-					.catch((err) => {
-						console.log('err:', err);
-					});
+				// axiosClient
+				// 	.post('/insertLiveChatMessage', {
+				// 		liveChatId: broadCastInfo?.liveChatId,
+				// 		message: '[きのボット] 参加リクエストの受付を開始しました！',
+				// 	})
+				// 	.then((res) => {
+				// 		console.log('res:', res);
+				// 	})
+				// 	.catch((err) => {
+				// 		console.log('err:', err);
+				// 	});
 
 				intervalIdRef.current = setInterval(() => {
 					fetchChatMessages();
