@@ -90,22 +90,23 @@ const Login: NextPage<ILoginProps> = () => {
 										</div>
 									</>
 								</form>
+								{/* provide a link to the privacy page */}
+								<div className='text-center mt-5'>
+									<Link
+										href='/page-layouts/privacy'
+										className={classNames('text-decoration-none me-3')}>
+										{t('PrivacyPolicy')}
+									</Link>
+								</div>
 							</CardBody>
 						</Card>
 						<div className='text-center'>
 							<Link
-								href='/'
+								href='/page-layouts/privacy'
 								className={classNames('text-decoration-none me-3', {
 									'link-dark': true,
 								})}>
 								Privacy policy
-							</Link>
-							<Link
-								href='/'
-								className={classNames('link-light text-decoration-none', {
-									'link-dark': true,
-								})}>
-								Terms of use
 							</Link>
 						</div>
 					</div>

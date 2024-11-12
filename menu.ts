@@ -89,6 +89,11 @@ export const pageLayoutTypesPagesMenu = {
 				path: 'page-layouts/only-content',
 				icon: 'WebAsset',
 			},
+			privacy: {
+				id: 'privacy',
+				text: 'Privacy',
+				path: 'page-layouts/privacy',
+			}
 		},
 	},
 	asideTypes: {
